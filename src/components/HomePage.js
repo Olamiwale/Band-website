@@ -8,19 +8,23 @@ import image from '../assets/image.png'
 const slides = [
   {
     url: image1,
-    text: 'First Slide'
+    location: 'America',
+    text: 'The sky turned Blue'
   },
   {
     url: image2,
-    text: 'Second Slide'
+    location: 'London',
+    text: 'London bridge was in awe'
   },
   {
     url: image3,
-    text: 'Third Slide'
+    location: 'Nigeria',
+    text: 'Great people great Nation'
   },
   {
     url: image,
-    text: 'Fourth Slide'
+    location: 'Israel',
+    text: 'The land of the Lord'
   },
 ];
 
@@ -30,7 +34,7 @@ const SlideShow = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 3000); 
+    }, 6000); 
 
     return () => clearInterval(interval);
   }, []);
@@ -43,9 +47,12 @@ const SlideShow = () => {
           className={`absolute inset-0 transition-opacity duration-1000 ${id === currentSlide ? 'opacity-100' : 'opacity-0'}`}
         >
           <img className="w-full h-screen  " src={image.url} alt={`Slide ${id + 1}`} />
+
           <div className="text-xl text-white font-bold absolute left-5 bottom-50 top-[500px] md:top-[500px] lg:top-[500px] right-5 items-center justify-center flex flex-col ">
-            {image.text}
+            <p className='text-black'> {image.location}</p>
+            <p className='text-black'>{image.text}</p>
           </div>
+         
         </div>
       ))}
      

@@ -2,10 +2,14 @@ import React, {useState} from 'react'
 
 export default function Navbar() {
 
-const [nav, setNav] = useState(null)
+const [nav, setNav] = useState(false)
 
 const toggle = () => {
   setNav(!nav)
+
+  if(nav) {
+    
+  }
   
 }
 
@@ -23,17 +27,23 @@ const toggle = () => {
             <li>contact</li>
             <li>more</li>
         </ul>
+
+      
         
 
         <div>
-        <ul className='absolute bg-black/60 flex flex-col p-5 gap-10 left-0 w-full items-center mt-10 md:hidden'>
-            <li>Home</li>
-            <li>band</li>
-            <li>tour</li>
-            <li>contact</li>
-            <li>more</li>
+        <ul className={nav ?'cursor-pointer absolute bg-black/60 flex flex-col  gap-10 left-0 w-full items-center mt-[50px] md:hidden ease-in-out duration-500 ': 'hidden'}>
+            <li className='hover:font-bold hover:bg-gray-700/30 p-5 w-full flex justify-center'>Home</li>
+            <li className='hover:font-bold hover:bg-gray-700/30 p-5 w-full flex justify-center'>band</li>
+            <li className='hover:font-bold hover:bg-gray-700/30 p-5 w-full flex justify-center'>tour</li>
+            <li className='hover:font-bold hover:bg-gray-700/30 p-5 w-full flex justify-center'>contact</li>
+            <li className='hover:font-bold'>more</li>
         </ul>
-        <div onClick={toggle}>Icon</div>
+
+        <div> </div>
+
+        
+        <div onClick={toggle} className=' bg-gray-700 rounded-sm uppercase font-extrabold text-[8px] cursor-pointer hover:bg-gray-700/50 p-5 w-full flex justify-center'>{nav ? <div>close</div> : <div> open</div> } </div>
 
         </div>
 

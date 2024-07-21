@@ -3,9 +3,9 @@ import Card from './Card'
 
 export default function About() {
   return (
-    <div className='py-10'>
+    <div className='py-10 bg-gray-200'>
         <div className='text-xl uppercase flex justify-center flex-col items-center p-5 gap-5'>
-           <p>Briitz band</p>
+           <p className='font-bold'>Briitz band</p>
         <p>We love music</p> 
         </div>
 
